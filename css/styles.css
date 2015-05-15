@@ -523,11 +523,11 @@ strong,
 }
 
 .sticky-navigation .navbar-brand {
-	padding: 18px 15px;
+	padding: 10px 15px;
 }
 
 .sticky-navigation .navbar-brand img {
-	max-width: 80px;
+	max-width: 160px;
 	-webkit-backface-visibility: hidden;
 }
 
@@ -567,7 +567,7 @@ strong,
 }
 
 .only-logo .navbar-header img {
-	max-width: 80px;
+	max-width: 160px;
 }
 /* INTRO */
 .intro-section {
