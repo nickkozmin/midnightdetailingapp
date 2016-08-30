@@ -44,7 +44,7 @@ class PagesController < ApplicationController
 
   def create_lead
   	@lead = Lead.create(
-      address: params[:address], 
+      city: params[:city], 
       car_type: params[:car_type], 
       date_request: params[:date_request], 
       time_request: params[:time_request], 
