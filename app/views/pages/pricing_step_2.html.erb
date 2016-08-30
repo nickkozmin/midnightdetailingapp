@@ -1,0 +1,230 @@
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<meta name="description" content="Startups template">
+	<meta name="keywords" content="Startups template">
+
+	<link rel="shortcut icon" href="../assets/img/favicon.ico">
+
+	<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.jpg">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/img/apple-touch-icon-72x72.jpg">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/img/apple-touch-icon-114x114.jpg">
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/custom-animations.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+		<script src="../assets/js/html5shiv.js"></script>
+		<script src="../assets/js/respond.min.js"></script>
+	<![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="../assets/css/flipclock.css">
+
+		
+<!-- 
+	<link rel="stylesheet" type="text/css" href="../assets/css/builder-fix.css" /> -->
+
+</head>
+
+<style>
+.btn.btn-outline{ 
+	background-color: #c0392b;
+}
+
+.btn-outline-color.btn-sm{
+	background-color: #c0392b;
+	color: white;
+	border: none;
+}
+
+.btn.btn-outline-color{
+	background-color: #c0392b;
+	color: white;
+}
+</style>
+
+<body id="landing-page" class="landing-page">
+	<div id="page" class="page">
+<div class="bg bg1 window-height align-center dark-text clearfix">
+			<div class="container centered-block">
+		
+
+				<div class="col-sm-6 col-md-offset-3">
+					<h2 class="editContent"><span class="highlight">Complete</span> Your Booking</h2>
+					<p class="editContent highlight" style="margin-bottom: 20px;">
+						<% if @lead %> 
+						Vehicle: <%= @lead.car_type %> 
+						<br>
+						Date: <%= @lead.date_request %><br>
+						Time: <%= @lead.time_request %> <br>
+						Price: <% case @lead.car_type 
+						when "2-Door" %> $59
+						<% when "4-Door" %> $59
+						<% when "SUV" %> $79 
+						<% when "Truck" %> $79 
+						<% else %> $59	 
+							 <%end%> <br>
+						
+					</p>
+					<%end%>
+					Your card will be charged upon completion of the job. You will also have the opportuntiy to inspect the job before paying and if you would like to tip your pro, you will have the option to do so.  
+					<div class="clock" style="margin:2em;"></div>
+					
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+
+<style>
+
+.form-sub-label-container1{
+	padding-top:5px;
+}
+
+.form-line{
+	padding:5px;
+}
+
+</style>
+
+
+<%= form_tag(stripe_create_path, method: "post",  id:"customer_form", class: "form jotform-form form-outline form-outline-black", style:"padding: 20px 20px 15px;" ) do %>
+<input type="hidden" name="id" value="<%= @lead.id%>">
+<%end%>
+  <div class="form-all">
+    <ul class="form-section page-section">
+     	<div class="form-all"> 
+                            <ul class="form-section page-section">
+                         <form action="" method="POST" id="payment-form" class="form jotform-form lead-form form-light">
+                         	<p class="editContent highlight"> Safe and Secure Payment Processing - Powered By Stripe </p>
+  							<span class="payment-errors" style="color:red;"></span>
+
+  	
+  							<div class="form-group col-sm-12">
+      						<input type="text" placeholder="Card Number" size="20" class="form-control required" data-stripe="number">
+    						</div>
+
+
+  
+ 							<div class="form-group col-sm-12">
+      						<input type="text" size="2" class="form-control required" placeholder="Expiration (MM)" data-stripe="exp_month">
+      						</div>
+
+   						 
+   						 <div class="form-group col-sm-12">
+    					<input type="text" class="form-control required"placeholder="Expiration Year (YY)"size="2" data-stripe="exp_year">
+    					</div>
+
+
+  
+    
+      					<div class="form-group col-sm-12">
+      					<input type="text" class="form-control required"placeholder="CVC" size="4" data-stripe="cvc">
+      				</div>
+
+
+
+
+  						<input type="submit" class="btn btn-lg btn-solid btn-block" value="Let's Go ">
+						</form>
+
+                        </div>
+                        </div>
+ 
+      
+          
+      
+   	
+
+  
+    </ul>
+  </div>
+
+
+						
+				</div>
+				
+			</div>
+		</div>
+		
+
+	
+
+
+
+
+<script type="text/javascript">
+	var clock = $('.my-clock').FlipClock(6000, {
+		// clockFace: 'MinuteCounter', 
+		countdown: 'true'
+	});
+</script>
+
+
+
+	</div><!-- /#page -->
+
+	<!--[if lt IE 9]> <script type="text/javascript" src="../assets/js/jquery-1.11.3.min.js?ver=1"></script> <![endif]-->
+	<!--[if (gte IE 9) | (!IE)]><!--> <script type="text/javascript" src="../assets/js/jquery-2.1.4.min.js?ver=1"></script> <!--<![endif]-->
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="../assets/js/flipclock.min.js"></script>
+
+	<script type="text/javascript" src="../assets/js/startuply.js"></script>
+	<script type="text/javascript" src="../assets/js/builder-fix.js"></script>
+<script>
+	
+Stripe.setPublishableKey('<%=ENV["STRIPE_TEST_PUBLISHABLE_KEY"]%>');
+	$(function() {
+  var $form = $('#payment-form');
+  $form.submit(function(event) {
+    // Disable the submit button to prevent repeated clicks:
+    $form.find('.submit').prop('disabled', true);
+
+    // Request a token from Stripe:
+    Stripe.card.createToken($form, stripeResponseHandler);
+
+    // Prevent the form from being submitted:
+    return false;
+  });
+});
+
+function stripeResponseHandler(status, response) {
+  // Grab the form:
+  var $form = $('#payment-form');
+ 
+  var $customer_form = $('#customer_form');
+
+  if (response.error) { // Problem!
+
+    // Show the errors on the form:
+    $form.find('.payment-errors').text(response.error.message);
+    $form.find('.submit').prop('disabled', false); // Re-enable submission
+
+  } else { // Token was created!
+
+    
+    // Get the token ID:
+    var token = response.id;
+    var $customer_form = $('#customer_form');
+
+    // Insert the token ID into the form so it gets submitted to the server:
+    $customer_form.append($('<input type="hidden" name="stripeToken">').val(token));
+
+    // Submit the form:
+    $customer_form.get(0).submit();
+  }
+};
+</script>
+
+
+
+</body>

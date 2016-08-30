@@ -1,0 +1,385 @@
+
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<meta name="description" content="Auto Detailing Pricing">
+	<meta name="keywords" content="Auto Detailing">
+
+	<link rel="shortcut icon" href="../assets/img/favicon.ico">
+
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/custom-animations.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css"
+    rel="stylesheet" type="text/css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+		<script src="../assets/js/html5shiv.js"></script>
+		<script src="../assets/js/respond.min.js"></script>
+	<![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="../assets/css/flipclock.css">
+
+		
+<!-- 
+	<link rel="stylesheet" type="text/css" href="../assets/css/builder-fix.css" /> -->
+
+</head>
+
+<style>
+.btn.btn-outline{ 
+	background-color: #c0392b;
+}
+
+.btn-outline-color.btn-sm{
+	background-color: #c0392b;
+	color: white;
+	border: none;
+}
+
+.btn.btn-outline-color{
+	background-color: #c0392b;
+	color: white;
+}
+</style>
+
+<body id="landing-page" class="landing-page">
+	<div id="page" class="page">
+<div class="bg bg1 window-height align-center dark-text clearfix">
+			<div class="container centered-block">
+		
+
+				<div class="col-sm-6 ">
+					<h2 class="editContent"><span class="highlight">Complete</span> Your Booking</h2>
+					<p class="editContent highlight" style="margin-bottom: 20px;"> We are currently offering interior cleaning in your area. <br>
+						<% if @lead %> 
+						Vehicle: <%= @lead.car_type %> 
+						<br>
+						Date: <%= @lead.date_request %><br>
+						Time: <%= @lead.time_request %> <br>
+						Price: <% case @lead.car_type 
+						when "2-Door" %> $59
+						<% when "4-Door" %> $59
+						<% when "SUV" %> $79 
+						<% when "Minivan" %> $79
+						<% when "Truck" %> $79 
+						<% else %> $59	 
+							 <%end%> <br>
+						
+					</p>
+					<%end%>
+					All pros are insured, screened and professionally trained. All services are guaranteed or money-back. 
+					<div class="clock" style="margin:2em;"></div>
+					
+					<!-- <p> Charged only when job is completed and inspected</p> -->
+<!-- <div class="cognito">
+<script src="https://services.cognitoforms.com/s/AbEZ7SolhUaFVsEz7iscow"></script>
+<script>Cognito.load("forms", { id: "2" });</script>
+</div> -->
+
+
+<script src="https://js.stripe.com/v1/" type="text/javascript"></script>
+
+
+<style>
+
+.form-sub-label-container1{
+	padding-top:5px;
+}
+
+.form-line{
+	padding:5px;
+}
+
+</style>
+
+
+<%= form_tag(step_2_path(id: @lead.id), method: "get",  class: "form jotform-form form-outline form-outline-black", style:"padding: 20px 20px 15px;" ) do %>
+<input type="hidden" name="id" value="<%= @lead.id%>">
+  <div class="form-all">
+    <ul class="form-section page-section">
+     <li class="form-line" data-type="control_dropdown" id="id_14">
+      
+        <div id="cid_14" class="form-input jf-required">
+          <select class="form-control"  id="input_14" name="frequency">
+            <option value=""> How often would you like your car cleaned? </option>
+            <option value="Once a Month"> Once a Month </option>
+            <option value="Once Every 2 Weeks"> Once Every 2 Weeks </option>
+            <option value="Once"> Once </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_fullname" id="id_3">
+        
+         
+       	  <input class="form-textbox" type="text" size="10" data-validation="required" name="first_name" placeholder="First Name" id="first_3" />
+       	</li>
+            
+          
+         <li class="form-line" data-type="control_fullname" id="id_3">
+           <input class="form-textbox" type="text" size="15" name="last_name" data-validation="required" placeholder="Last Name" id="last_3" />
+
+      </li>
+      <li class="form-line" data-type="control_email" id="id_4">
+       
+
+          <input type="email" placeholder="Email" data-validation="required" class=" form-textbox validate[Email]" id="input_4" name="email" size="30" value="" />
+    
+      </li>
+      
+      <li class="form-line" style="padding:20px;" data-type="control_address" id="id_5">
+        
+       
+          <table summary="" undefined class="form-address-table" border="0" >
+            <tr >
+             <td style="padding-bottom: 4px; " colspan="2" >
+                <span class="form-sub-label-container" style="vertical-align: top;">
+                  <input class="form-textbox form-address-line" data-validation="required" placeholder="Street Address" type="text" name="address" id="input_5_addr_line1" value="<%= @lead.address if @lead %>" />
+                 
+                </span>
+             </td>
+            </tr>
+            <tr>
+              <td style="padding-bottom: 4px;" colspan="2">
+                <span class="form-sub-label-container" style="vertical-align: top">
+                  <input class="form-textbox form-address-line" placeholder="Street Address Line 2" type="text" name="address_line_2" id="input_5_addr_line2" size="46" />
+                  
+                </span>
+              </td>
+            </tr>
+            <tr style="padding-bottom: 4px;">
+              <td width="50%" style="padding-bottom: 4px;" >
+                <span class="form-sub-label-container" style="vertical-align: top">
+                  <input class="form-textbox form-address-city" data-validation="required" placeholder="City" type="text" name="city" id="input_5_city" size="21" />
+                 
+                </span>
+              </td>
+              <td style="padding-left: 5px;">
+                <span class="form-sub-label-container" style="vertical-align: top">
+                  <input class="form-textbox form-address-state" data-validation="required" placeholder="State/Province" type="text" name="province" id="input_5_state" size="22" />
+                  
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td width="50%">
+                <span class="form-sub-label-container" style="vertical-align: top">
+                  <input class="form-textbox form-address-postal" placeholder="Postal / Zip" type="text" name="postal_code" id="input_5_postal" size="10" />
+                	
+                </span>
+              </td>
+              <td style="padding-left: 5px;">
+                
+                  <select class="form-control form-address-country" defaultcountry="" name="country" id="input_5_country">
+                    
+                    
+                    <option value="Canada"> Canada </option>
+                    
+                  </select>
+                 
+               
+              </td>
+            </tr>
+          </table>
+       
+      </li>
+      <li class="form-line " style=" padding-top:10px;" data-type="control_checkbox" id="id_13">
+        
+       
+            <input type="hidden" name="condo" value="no">
+              <span style="left:0px;">
+              <input type="checkbox" style="left:2px;" id="input_13_0" name="condo" value="Yes" />
+              <label id="label_input_13_0" for="input_13_0"> This is a condo </label>
+          </span>
+            
+       	
+      </li>
+
+      <li class="form-line" data-type="control_phone" id="id_6">
+       
+        <div id="cid_6" class="form-input jf-required">
+        
+          <span class="form-sub-label-container" style="vertical-align: top">
+            <input class="form-textbox" data-validation="required" placeholder="Phone Number" type="tel" name="phone_number" id="input_6_phone" value="<%= @lead.phone_number if @lead %>" size="10">
+            
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textbox" id="id_11">
+      
+        <div id="cid_11" class="form-input jf-required">
+          <input type="text" class=" form-textbox" data-type="input-textbox" id="input_11" name="license_plate" placeholder="License Plate/Parking Spot (If in condo)" size="20" value="" />
+        </div>
+      </li>
+ 
+      
+          
+      
+   	
+	<li style="padding-top: 20px; left:0; width: 40px;">        
+            <button id="input_2" type="submit" style="left: 0px;" >
+              Let's Go
+            </button>
+      
+   </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+
+  <%end%>
+						
+				</div>
+					<div class="col-sm-6">
+						<div class="package-column " >
+							<div class="package-title editContent">Interior Clean (Currently Available In Your Area)</div>
+							<div class="package-price">
+								
+								<!-- <div class="price editContent" style="color: #c0392b; font-size: 45px;"><strike>$98</strike></div> -->
+								<div class="price " style="font-size: 48px;"><span class="currency" style="font-size:38px;"></span>
+									<% if @lead %> 
+									<% case @lead.car_type  
+									 when "2-Door" %> $59
+									<% when "4-Door" %> $59
+									<% when "SUV" %> $79
+									<% when "Minivan" %> $79
+									<% when "Truck" %> $79
+									<% else %> $59
+									<% end %> 
+									<% end %> 
+									</div>
+								<div class="period editContent" style="color: #c0392b;">Charged after job is completed </div>
+
+								<div class="period editContent" style="color: #c0392b;">Professional Service Guaranteed or Money Back </div>
+								
+							</div>
+							
+							<div class="package-detail">
+								<ul class="list-unstyled">
+									<li class="editContent"><strong>1.5</strong> Hours</li>
+									
+									<li class="editContent"><strong>Clean</strong> Cupholders, Doors and Dash </li>
+									<li class="editContent"><strong>Remove</strong> All Garbage </li>	
+									<li class="editContent"><strong>Thorough Vacuum</strong>  (+trunk)</li>
+									<li class="editContent"><strong>Deep Clean </strong>Seats</li>
+									<li class="editContent"><strong>Eliminate</strong> Odors</li>
+									<li class="editContent"><strong>Clean</strong> Windows and Mirrors</li>
+								</ul>
+								
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		
+
+	
+
+
+				
+<!-- 
+					<div class="col-sm-4">
+						<div class="package-column " >
+							<div class="package-title editContent">Interior Clean</div>
+							<div class="package-price">
+								
+								<div class="price editContent" style="color: #c0392b; font-size: 45px;"><strike>$98</strike></div>
+								<div class="price "><span class="currency">$</span>59</div>
+								<div class="period editContent" style="color: #c0392b;">Save 40% </div>
+								
+							</div>
+							<div class="package-detail">
+								<ul class="list-unstyled">
+									<li class="editContent"><strong>1.5</strong> Hours</li>
+									
+									<li class="editContent"><strong>Clean</strong> Cupholders, Doors and Dash </li>
+									<li class="editContent"><strong>Remove</strong> All Gargabe </li>	
+									<li class="editContent"><strong>Thorough Vacuum</strong>  (+trunk)</li>
+									<li class="editContent"><strong>Deep Clean </strong>Seats</li>
+									<li class="editContent"><strong>Eliminate</strong> Odors</li>
+									<li class="editContent"><strong>Clean</strong> Windows and Mirrors</li>
+								</ul>
+								<a href="./promo.html" class="btn btn-outline-color btn-block editContent">Claim Your 40% Off </a>
+							</div>
+						</div>
+					</div>
+ -->
+<!-- 					<div class="col-sm-4">
+						<div class="package-column" >
+							<div class="package-title editContent">Exterior Wash & Wax</div>
+							<div class="package-price">
+								<div class="price editContent" style="color: #c0392b; font-size: 45px;"><strike>$82</strike></div>
+								<div class="price "><span class="currency">$</span>49</div>
+								<div class="period editContent" style="color: #c0392b;">Save 40% </div>
+
+							</div>
+							<div class="package-detail">
+								<ul class="list-unstyled">
+									<li class="editContent"><strong>1.5</strong> Hours</li>
+									<li class="editContent"><strong>Hand Foam</strong> Wash </li>
+									
+									<li class="editContent"><strong>Spray Wax</strong> (Carnuba)</li>
+									<li class="editContent"><strong>Clean </strong>Wheels, Wheel wells, Tires </li>
+									<li class="editContent"><strong>Dress </strong> Tires </li>
+									<li class="editContent"><strong>Clean</strong> Windows and Mirrors</li>
+								</ul>
+								<a href="./promo.html" class="btn btn-outline-color btn-block editContent">Claim Your 40% Off </a>
+							</div>
+						</div>
+					</div> -->
+
+<!-- 					<div class="col-sm-4">
+						<div class="package-column">
+							<div class="package-title editContent">Extras</div>
+							<div class="package-price">
+								<div class="period editContent">Starting at</div>
+								<div class="price editContent"><span class="currency">$</span>49</div>
+								
+							</div>
+							<div class="package-detail">
+								<ul class="list-unstyled">
+									<li class="editContent"><strong>Carpet</strong> Shampoo</li>
+									<li class="editContent"><strong>Paste </strong>Wax </li>
+									<li class="editContent"><strong>Leather </strong>Conditioning </li>
+									<li class="editContent"><strong>Clay </strong>Bar </li>
+									<li class="editContent"><strong>Scratch </strong>Removal </li>
+									<li class="editContent"><strong>High-Speed </strong>Polishing </li>
+								
+								</ul>
+								<a href="./promo.html" class="btn btn-outline-color btn-block editContent">Claim Your 40% Off </a>
+							</div>
+						</div>
+					</div> -->
+			
+				
+	
+
+	</div><!-- /#page -->
+
+	<!--[if lt IE 9]> <script type="text/javascript" src="../assets/js/jquery-1.11.3.min.js?ver=1"></script> <![endif]-->
+	<!--[if (gte IE 9) | (!IE)]><!--> <script type="text/javascript" src="../assets/js/jquery-2.1.4.min.js?ver=1"></script> <!--<![endif]-->
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="../assets/js/flipclock.min.js"></script>
+
+	<script type="text/javascript" src="../assets/js/startuply.js"></script>
+	<script type="text/javascript" src="../assets/js/builder-fix.js"></script>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script> 
+	$.validate();
+	</script>
+
+
+</body>

@@ -1,0 +1,115 @@
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<meta name="description" content="Startups template">
+	<meta name="keywords" content="Startups template">
+
+	<link rel="shortcut icon" href="assets/img/favicon.ico">
+
+	<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.jpg">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.jpg">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.jpg">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/custom-animations.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="assets/css/flipclock.css">
+
+		
+<!-- 
+	<link rel="stylesheet" type="text/css" href="assets/css/builder-fix.css" /> -->
+
+</head>
+
+<style>
+.btn.btn-outline{ 
+	background-color: #c0392b;
+}
+
+.btn-outline-color.btn-sm{
+	background-color: #c0392b;
+	color: white;
+	border: none;
+}
+
+.btn.btn-outline-color{
+	background-color: #c0392b;
+	color: white;
+}
+</style>
+
+<body id="landing-page" class="landing-page">
+	<div id="page" class="page">
+<div class="bg bg1 window-height align-center dark-text clearfix">
+			<div class="container centered-block">
+		
+
+				<div class="row">
+					<div class="col-sm-6 col-md-6 col-lg-6 col-md-offset-3 col-xs-12">
+					<h3 class="editContent"><span class="highlight"></span> We appreciate the business. One of our reps will contact you 24 hours before your scheduled job to confirm.  </h3>
+					
+					All pros are screened, checked and insured. All services are provided with a 100%-money-back guarantee. <br> <%= link_to "Back" , root_path(id: @lead.id)%> 
+					</div> 
+
+				</div>
+					<div class="col-sm-6 col-md-6 col-xs-12 pull-md-right col-md-offset-3  " >
+						<div class="package-column " >
+							<div class="package-title editContent">Interior Clean</div>
+							<div class="package-price">
+								
+								<!-- <div class="price editContent" style="color: #c0392b; font-size: 45px;"><strike>$98</strike></div> -->
+								<div class="price " style="font-size: 48px;"><span class="currency" style="font-size:38px;"></span>$<%=@lead.price%></div>
+								<div class="period editContent" style="color: #c0392b;">Charged after job is completed </div>
+
+								<div class="period editContent" style="color: #c0392b;">Professional Service Guaranteed or Money Back </div>
+								
+							</div>
+							
+							<div class="package-detail">
+								<ul class="list-unstyled">
+									<li class="editContent"><strong>1.5</strong> Hours</li>
+									
+									<li class="editContent"><strong>Clean</strong> Cupholders, Doors and Dash </li>
+									<li class="editContent"><strong>Remove</strong> All Garbage </li>	
+									<li class="editContent"><strong>Thorough Vacuum</strong>  (+trunk)</li>
+									<li class="editContent"><strong>Deep Clean </strong>Seats</li>
+									<li class="editContent"><strong>Eliminate</strong> Odors</li>
+									<li class="editContent"><strong>Clean</strong> Windows and Mirrors</li>
+								</ul>
+								<!-- <a href="./promo.html" class="btn btn-outline-color btn-block editContent">Claim Your 40% Off </a> -->
+							</div>
+						</div>
+					</div>
+
+					
+				
+	
+
+	</div><!-- /#page -->
+
+	<!--[if lt IE 9]> <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js?ver=1"></script> <![endif]-->
+	<!--[if (gte IE 9) | (!IE)]><!--> <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js?ver=1"></script> <!--<![endif]-->
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="assets/js/flipclock.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/startuply.js"></script>
+	<script type="text/javascript" src="assets/js/builder-fix.js"></script>
+
+
+
+</body>

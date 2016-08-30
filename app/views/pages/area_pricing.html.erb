@@ -1,0 +1,315 @@
+
+<head>
+
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>Auto Detailing Service Mobile</title>
+	<meta name="description" content="Toronto Mobile Detailing and Car Cleaning">
+	<meta name="keywords" content="Toronto Mobile Detailing, Auto Detailing Oakville, Auto Detailing">
+	<link rel="shortcut icon" href="../assets/img/favicon.ico">
+	<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.jpg">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/img/apple-touch-icon-72x72.jpg">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/img/apple-touch-icon-114x114.jpg">
+	<link rel="stylesheet" type="text/css" href="../assets/css/custom-animations.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/lib/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/jquery.timepicker.css" />
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css"
+    rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+      
+
+	<!--[if lt IE 9]>
+		<script src="../assets/js/html5shiv.js"></script>
+		<script src="../assets/js/respond.min.js"></script>
+	<![endif]-->
+
+
+
+<style> 
+
+.btn-block.btn-lg.btn-solid.btn{
+	background-color: #c0392b;
+	color: white;
+	border: none;
+}
+
+
+@media (max-width: 767px)  {
+    
+    .heading{
+    	font-size: 16px;
+    }
+}  
+
+</style>
+
+</head>
+
+<body id="register-page" class="register-page">
+	<!-- Preloader -->
+	<div class="preloader-mask">
+		<div class="preloader"><div class="spin base_clr_brd"><div class="clip left"><div class="circle"></div></div><div class="gap"><div class="circle"></div></div><div class="clip right"><div class="circle"></div></div></div></div>
+	</div>
+
+	<!doctype html>
+<html lang="en">
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<meta name="description" content="Startups template">
+	<meta name="keywords" content="Startups template">
+
+	<link rel="shortcut icon" href="../assets/img/favicon.ico">
+
+
+
+	<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.jpg">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/img/apple-touch-icon-72x72.jpg">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/img/apple-touch-icon-114x114.jpg">
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/custom-animations.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+	<!--[if lt IE 9]>
+		<script src="../assets/js/html5shiv.js"></script>
+		<script src="../assets/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/builder-fix.css" />
+</head>
+
+<body id="landing-page" class="landing-page">
+	<div id="page" class="page">
+
+		<div class="bg bg1 window-height light-text form-section lead-generation2 clearfix">
+			<div class="container centered-block">
+
+				<!-- <div class="col-sm-6 align-left" style="padding-top: 50px;">
+
+
+					<div style="margin-bottom: 70px;">
+						<article class="align-left icon-text icon-block-left">
+							<div class="icon-block-icon">
+								<i class="fa fa-money highlight "></i>
+							</div>
+							<div class="icon-block-text">
+								<span class="heading editContent">RECIEVE A $60 COUPON CODE</span>
+								<p class="thin editContent">A $60 coupon will be sent directly to your phone. Make sure to reference your code for your discount! </p>
+							</div>
+						</article>
+					</div>
+					<div style="margin-bottom: 70px;">
+						<article class="align-left icon-text icon-block-left">
+							<div class="icon-block-icon">
+								<i class="fa fa-car highlight "></i>
+							</div>
+							<div class="icon-block-text">
+								<span class="heading editContent">GET A QUOTE FOR YOUR VEHICLE</span>
+								<p class="thin editContent">Simply text back for a free quote! </p>
+							</div>
+						</article>
+					</div>
+					
+				</div> -->
+			
+
+
+
+<!-- Sign Up Form --> 
+				<div class="col-sm-6" style="padding: 25px 35px;">
+					<%= form_tag('/pages/create_lead', method: "post", id: "lead_create" , class: "form jotform-form lead-form form-light") do  %> 
+				
+				
+
+						 <div class="form-all"> 
+						 	<ul class="form-section page-section">
+						<div class="col-sm-12">
+							<h3 class="editContent highlight">Get A Price</h3>
+							
+						</div>
+				
+						<div class="form-group col-sm-12">
+							<p class="editContent highlight"> Where do we need to be? </p>
+							<input type="text" class=" form-control required" data-type="input-textbox" id="address" name="address" size="10" data-validation="required" placeholder="Address"  /> 
+						</div>
+						<div class="form-group col-sm-12">
+							<p class="editContent highlight">Tell us about your car </p>
+							<select class=" form-control required" data-validation="required" data-type="input-textbox" name="car_type" placeholder="Vehicle">
+							  <option  disabled="disabled" selected="selected">Please Select a Vehicle Size</option>
+							  <option value="2-Door">2-Door Car</option>
+							  <option value="4-Door">4-Door Car</option>
+							  <option value="Minivan">Minivan</option>
+							  <option value="SUV">SUV</option>
+							  <option value="Truck">Truck</option>
+							</select>
+
+							
+						</div>
+
+						<div class="form-group col-sm-12">
+							<p class="editContent highlight">What service are you looking for?</p>
+							<select class=" form-control required" data-validation="required" data-type="input-textbox" name="service_type" placeholder="Vehicle">
+							  <option  disabled="disabled" selected="selected">Please Select a Service</option>
+							  <option value="1">1 Hour - Quick Interior Cleaning (no shampoo)</option>
+							  <option value="2">1 Hour - Exterior Wash and Wax</option>
+							  <option value="3">2 Hour - Interior Cleaning (no shampoo) + Exterior Wash and Wax</option>
+							  <option value="3">2 Hour - Full Interior Detailing With Shampoo</option>
+							  <option value="5">3 Hour - Full Interior Detailing With Shampoo + Full Exterior Wash and Wax</option>
+							</select>
+
+							
+						</div>
+
+
+						<div class="form-group col-sm-12">
+							<p class="editContent highlight"> When would you like us to come? </p>
+							<input type="text" name="date_request" data-validation="required" class="form-control required" id="datepicker" placeholder="Date">
+						</div>
+						<div class="form-group col-sm-12">
+							
+							<input type="text" name="time_request" data-validation="required" class="form-control required" placeholder="Time "id="time">
+						</div>
+						<div class="form-group col-sm-12">
+							
+							<input type="text" class=" form-control required" data-type="input-textbox" id="phone" name="phone_number" maxlength="10" size="10" data-validation="number" data-validation-length="min10" placeholder="Phone Number"  /> 
+						</div>
+					
+
+						
+
+
+
+		
+<!-- 						<div class="form-group col-sm-12">
+							
+							<input type="number" class=" form-control required " data-type="input-textbox" id="input_8" name="q8_number" size="8" data-validation="length" data-validation-length="min10" data-validation="number" placeholder="Phone Number" />
+						</div> -->
+						</li> 
+						</div>
+					<!-- 	<div class="form-group col-sm-12">
+							<textarea id="message" name="message" class="form-control message" placeholder="Enter your message here"></textarea>
+						</div> -->
+
+						<div class="form-group col-sm-12">
+							<input type="submit" value="Get A Price" id="input_10" class="btn btn-lg btn-solid btn-block">
+						</div>
+							
+
+						
+						
+					<%end%>
+				</div>
+			</div>
+		</div>
+
+	</div><!-- /#page -->
+
+
+
+
+
+
+<!-- 
+ <form class="jotform-form" action="https://submit.jotform.us/submit/62025549780156/" method="post" name="form_62025549780156" id="62025549780156" accept-charset="utf-8"> 
+ 	<input type="hidden" name="formID" value="62025549780156" /> 
+ 	<div class="form-all"> 
+ 		<ul class="form-section page-section"> 
+ 			<li class="form-line" data-type="control_textbox" id="id_7"> 
+ 				<label class="form-label form-label-left form-label-auto" id="label_7" for="input_7"> Name 
+ 				</label> 
+ 				<div id="cid_7" class="form-input jf-required"> 
+ 					<input type="text" class=" form-textbox" data-type="input-textbox" id="input_7" name="q7_name" size="20" value="" /> 
+ 				</div> 
+ 			</li> 
+ 			<li class="form-line" data-type="control_textbox" id="id_8"> 
+ 				<label class="form-label form-label-left form-label-auto" id="label_8" for="input_8"> Number </label> 
+ 				<div id="cid_8" class="form-input jf-required"> 
+ 					<input type="text" class=" form-textbox" data-type="input-textbox" id="input_8" name="q8_number" size="20" value="" /> </div> </li> <li class="form-line" data-type="control_textbox" id="id_9"> <label class="form-label form-label-left form-label-auto" id="label_9" for="input_9"> City </label> <div id="cid_9" class="form-input jf-required"> 
+ 					<input type="text" class=" form-textbox" data-type="input-textbox" id="input_9" name="q9_city" size="20" value="" /> </div> </li> 
+ 					<li class="form-line" data-type="control_button" id="id_10"> <div id="cid_10" class="form-input-wide"> <div style="margin-left:156px" class="form-buttons-wrapper"> 
+
+ 						<button id="input_10" type="submit" class="form-submit-button"> Submit </button> 
+
+ 						</div> </div> </li> <li style="display:none"> Should be Empty: 
+
+ 						<input type="text" name="website" value="" /> </li> </ul> </div> 
+
+ 						<input type="hidden" id="simple_spc" name="simple_spc" value="62025549780156" /> 
+
+ 						<script type="text/javascript"> document.getElementById("si" + "mple" + "_spc").value = "62025549780156-62025549780156"; </script>
+</form> -->
+
+
+
+
+
+	<!--[if lt IE 9]> <script type="text/javascript" src="../assets/js/jquery-1.11.3.min.js?ver=1"></script> <![endif]-->
+	<!--[if (gte IE 9) | (!IE)]><!--> <script type="text/javascript" src="../assets/js/jquery-2.1.4.min.js?ver=1"></script> <!--<![endif]-->
+	
+
+	<!--<script type="text/javascript" src="../assets/js/jquery.validate.min.js"></script>-->
+	 <!-- <script type="text/javascript" src="../assets/js/startuply.js"></script>
+	// <script type="text/javascript" src="../assets/js/builder-fix.js"></script> -->
+</body>
+</html>
+
+	
+
+	<div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
+
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="../assets/js/jquery-1.11.3.min.js?ver=1"></script>
+	<![endif]-->
+	<!--[if (gte IE 9) | (!IE)]><!-->
+		<script type="text/javascript" src="../assets/js/jquery-2.1.4.min.js?ver=1"></script>
+	<!--<![endif]-->
+
+	<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.appear.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.plugin.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.timepicker.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.countdown.js"></script>
+	 <script type="text/javascript" src="../assets/js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.validate.min.js"></script> 
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script type="text/javascript" src="../assets/js/jquery.geocomplete.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+
+    
+    
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script> 
+	$.validate();
+
+
+	$('#address').geocomplete();
+
+  	$( function() {
+    $( "#datepicker" ).datepicker(
+    	{minDate: 0, 
+    		maxDate: "30D"}
+    	);
+  	} );
+
+  	$('#time').timepicker({ 
+  		'scrollDefault': 'now',
+  		'minTime': '8:00am',
+  		'maxTime': '7:00pm'
+  	 });
+	</script>
+
+ 
+
+	
+	 <script type="text/javascript" src="../assets/js/startuply.js"></script>
+</body>
