@@ -94,7 +94,7 @@
 </style>
 
 
-<%= form_tag(stripe_create_path, method: "post",  id:"customer_form", class: "form jotform-form form-outline form-outline-black", style:"padding: 20px 20px 15px;" ) do %>
+<%= form_tag(stripe_create_path, method: "post",  id:"customer_form", class: "form jotform-form form-outline form-outline-black", style:"padding: 20px 20px 15px;", onsubmit: "ga('send', { 'hitType': 'pageview', 'page': '/vpv/submitted3/', 'title': 'Form Submitted' }); " ) do %>
 <input type="hidden" name="id" value="<%= @lead.id%>">
 <%end%>
   <div class="form-all">

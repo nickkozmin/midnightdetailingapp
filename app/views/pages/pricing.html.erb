@@ -101,7 +101,7 @@
 </style>
 
 
-<%= form_tag(step_2_path(id: @lead.id), method: "get",  class: "form jotform-form form-outline form-outline-black", style:"padding: 20px 20px 15px;" ) do %>
+<%= form_tag(step_2_path(id: @lead.id), method: "get",  class: "form jotform-form form-outline form-outline-black", style:"padding: 20px 20px 15px;", onsubmit: "ga('send', { 'hitType': 'pageview', 'page': '/vpv/submitted2/', 'title': 'Form Submitted' }); " ) do %>
 <input type="hidden" name="id" value="<%= @lead.id%>">
   <div class="form-all">
     <ul class="form-section page-section">

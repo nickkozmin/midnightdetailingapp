@@ -124,7 +124,7 @@
 
 <!-- Sign Up Form --> 
 				<div class="col-sm-6" style="padding: 25px 35px;">
-					<%= form_tag('/pages/create_lead', method: "post", id: "lead_create" , class: "form jotform-form lead-form form-light") do  %> 
+					<%= form_tag('/pages/create_lead', method: "post", id: "lead_create" , onsubmit:"ga('send', { 'hitType': 'pageview', 'page': '/vpv/submitted/', 'title': 'Form Submitted' }); ", class: "form jotform-form lead-form form-light") do  %> 
 				
 				
 

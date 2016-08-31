@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   require "stripe"
   Stripe.api_key = "#{ENV["STRIPE_TEST_SECRET_KEY"]}"
+  require 'twilio-ruby'
 
   def home
   end
@@ -39,7 +40,26 @@ class PagesController < ApplicationController
       funnel_step: 2
 
       )
+    send_text_notification(@lead.id)
     
+  end 
+
+  def send_text_notification(lead_id)
+    @lead = Lead.find(lead_id)
+
+  
+
+    require 'twilio-ruby'
+    @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+    @client.messages.create(
+     from: '+16476910992',
+      to: '+14164578795',
+      
+     
+      body: 'Hey a new lead was just created:  
+      ' + @lead.inspect
+      
+      )
   end 
 
   def create_lead
@@ -52,6 +72,9 @@ class PagesController < ApplicationController
       service_type: params[:service_type], 
       funnel_step: 1
       )
+
+    send_text_notification(@lead.id)
+
   	redirect_to pages_pricing_path(id: @lead.id)
   end 
 

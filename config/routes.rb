@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   
   get 'thanks' => 'pages#thanks'
 
+  post 'send_text' =>"pages#send_text_notification"
+
 
   get 'go' => 'pages#area_pricing'
 
