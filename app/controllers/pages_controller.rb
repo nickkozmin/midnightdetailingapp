@@ -9,6 +9,9 @@ class PagesController < ApplicationController
   def signup
   end
 
+  def thanks2
+  end 
+
   def pricing
     if params[:id]
     @lead = Lead.find(params[:id])
@@ -40,7 +43,7 @@ class PagesController < ApplicationController
       funnel_step: 2
 
       )
-    send_text_notification(@lead.id)
+    
     
   end 
 
@@ -60,6 +63,25 @@ class PagesController < ApplicationController
       ' + @lead.inspect
       
       )
+    @client.messages.create(
+     from: '+16476910992',
+      to: '+12893399193',
+      
+     
+      body: 'Hey a new lead was just created:  
+      ' + @lead.inspect
+      
+      )
+    @client.messages.create(
+     from: '+16476910992',
+      to: '+16475226996',
+      
+     
+      body: 'Hey a new lead was just created:  
+      ' + @lead.inspect
+      
+      )
+
   end 
 
   def create_lead
@@ -73,9 +95,10 @@ class PagesController < ApplicationController
       funnel_step: 1
       )
 
-    send_text_notification(@lead.id)
+  
+    post_to_formkeep(@lead.id)
 
-  	redirect_to pages_pricing_path(id: @lead.id)
+  	redirect_to thanks2_path
   end 
 
   def thanks
@@ -105,10 +128,76 @@ rescue Stripe::CardError => e
     
 
 
+  end
+
+  def jobcomplete
+
+  end 
+
+
+  def job_submit
+    
+    customer = Stripe::Customer.create(
+    :email => params[:email],
+    :source  => params[:stripeToken],
+
+    :description => " #{params[:first_name]} #{params[:last_name]} #{params[:job_number]}"
+    
+    )
+    
+    @job = Job.create(
+      customer_id: customer.id,
+      email: params[:email],
+      jobber_id: params[:job_number],
+      detailer: params[:detailer],
+      amount: params[:amount],
+      rating: params[:rating],
+      tip_percent: params[:tip_percent],
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      notes: params[:notes]
+
+      )
+      
+    
+
+      Stripe::Charge.create(customer: customer.id,
+                            amount: (@job.amount.to_i*113*(1+(@job.tip_percent/100))).to_i,
+                            description: " Jobber id: #{@job.jobber_id} Detailer: #{@job.detailer}"  ,
+                            currency: 'cad')
+    
+    redirect_to root_path
+rescue Stripe::CardError => e
+  flash[:error] = e.message
+  redirect_to jobcomplete_path
+
+    
+
   end 
 
 
   def area_pricing
+  end 
+
+  def post_to_formkeep(lead_id)
+    
+ 
+    @lead = Lead.find(lead_id)
+
+    @options = {
+      body: {
+        name: "New Inbound Request",
+        city: @lead.city, 
+        car_type: @lead.car_type,
+        date_request: @lead.date_request,
+        time_request: @lead.time_request,
+        phone_number: @lead.phone_number,
+        service_type: @lead.service_type
+
+      }
+    }
+
+    HTTParty.post('https://formkeep.com/f/a4820f36cafc?', @options)
   end 
 
 end

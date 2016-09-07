@@ -23,6 +23,10 @@ Rails.application.routes.draw do
 
   post 'send_text' =>"pages#send_text_notification"
 
+  get 'thanks2' => 'pages#thanks2'
+
+  get 'jobcomplete' => 'pages#jobcomplete'
+
 
   get 'go' => 'pages#area_pricing'
 
@@ -31,6 +35,8 @@ Rails.application.routes.draw do
   get 'step_2' => 'pages#pricing_step_2'
 
   post 'stripe_create' => 'pages#stripe_create'
+
+  post 'job_submit' => 'pages#job_submit'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

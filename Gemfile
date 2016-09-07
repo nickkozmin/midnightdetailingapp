@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'twilio-ruby', '~> 4.11.1'
+gem 'httparty', '~> 0.14.0'
 
 gem 'pg', '~> 0.18.4', group: :production
 gem 'rails_12factor', group: :production
